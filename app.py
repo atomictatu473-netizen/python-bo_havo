@@ -2,8 +2,13 @@ from flask import Flask, jsonify
 import asyncio
 from parser import ObHavoClient
 from asgiref.wsgi import WsgiToAsgi  # Flask’ni ASGI ga o‘rash uchun
+from flask_cors import CORS  # 🔥 CORS qo‘shish
 
 app = Flask(__name__)
+
+# 🔓 CORS ni yoqamiz (hozircha barcha domenlarga ruxsat beradi)
+# Agar xavfsizroq qilishni istasangiz, origins=["https://sizning-saytingiz.netlify.app"] qilib o‘zgartiring
+CORS(app)
 
 @app.route("/api/v1/obhavo/<city_name>", methods=["GET"])
 def get_weather(city_name):
