@@ -3,3 +3,4 @@ uvicorn
 asgiref
 httpx
 beautifulsoup4
+flask-cors
