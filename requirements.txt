@@ -1,0 +1,5 @@
+flask
+uvicorn
+asgiref
+httpx
+beautifulsoup4
